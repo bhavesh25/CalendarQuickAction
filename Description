@@ -22,6 +22,7 @@ Post Deployment steps:
 
 
 4.Add ‘Open Calendar’ quick action on Contact’s ’Contact Layout’ layout
+5.Contact should have email address field populated to receive email.
 
 
 Scenario:
