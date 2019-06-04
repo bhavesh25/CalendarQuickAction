@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="task" type="Task__c" default="{ 'sobjectType': 'Task__c','Name':'tst' }"/>
+    <aura:attribute name="errorString" type="String" default="" />
+
+    
+    <aura:if isTrue="{!v.errorString != ''}">
+        <div style="color:red">Error:<ui:outputText value="{!v.errorString}"/></div>
+    </aura:if><br></br>
+    
+    <ui:inputText   label="Title" class="slds-input" value="{!v.task.Title__c}"  /><br></br>
+    <aura:if isTrue="{!v.task.Id != ''}">
+        Status:<b><ui:outputText value="{!v.task.Status__c}"/></b>
+    </aura:if><br></br><br></br>
+    <ui:inputDateTime  label="Start" class="slds-input" value="{!v.task.Start_Time__c}" displayDatePicker="true" />
+    <br></br>
+    <ui:inputDateTime  label="End" class="slds-input" value="{!v.task.End_DateTime__c}" displayDatePicker="true" /><hr></hr>
+    <br></br>
+    	
+
+
+</aura:component>

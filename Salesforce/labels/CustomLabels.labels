@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Email_Service_Id</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Service Id</shortDescription>
+        <value>calendar@g-kqj510ihydxnmzx95l84x0vquhc8ffzr0wbkb838dhd2y9ywh.28-1e7n1eak.ap7.apex.salesforce.com</value>
+    </labels>
+</CustomLabels>

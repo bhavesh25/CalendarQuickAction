@@ -1,0 +1,35 @@
+<aura:component  access="global" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction"
+                controller="TaskcalendarController">
+    <aura:attribute name="timezone" type="String"  />
+    <aura:attribute name="errorString" type="String" default="" />
+    <aura:attribute name="task" type="Task__c" default="{ 'sobjectType': 'Task__c' }"/>
+    <ltng:require scripts="{!join(',',   
+                           $Resource.jqueryCalendar + '/jquery.js', 
+                           $Resource.jqueryCalendar + '/moment.js', 
+                           $Resource.calendar + '/calendar.js',
+                           $Resource.calendar + '/momentlocal.js',
+                           $Resource.dialog + '/jquery-ui.js'
+                            )}"
+                  styles ="{!join(',', 
+                           $Resource.calendar + '/calendar.css',
+                           $Resource.dialog + '/jquery-ui.css')}"
+                  afterScriptsLoaded="{!c.scriptsLoaded}" />
+    
+    <div id='calendar'></div> 
+    <div id="dialog" title="Event" style="display:none;">
+        <c:CreateNewEvent task="{!v.task}" errorString="{!v.errorString}"/>
+            <div align="right">
+                <aura:if isTrue="{!v.task.Id == ''}">
+                    <ui:button buttonTitle="Create event" class="slds-button slds-button_brand" label="Create event" press="{!c.getInput}"/>
+                    <aura:set attribute="else">
+                        <ui:button buttonTitle="Update event" class="slds-button slds-button_brand" label="Update event" press="{!c.getInput}"/>
+                        <ui:button buttonTitle="Cancel event" class="slds-button slds-button_destructive" label="Cancel event" press="{!c.deleteEventMethod}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+    </div>
+     <br></br>
+    
+    
+   
+</aura:component>
