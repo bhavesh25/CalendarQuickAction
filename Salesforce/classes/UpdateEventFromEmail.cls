@@ -5,7 +5,7 @@ global class UpdateEventFromEmail implements Messaging.InboundEmailHandler {
 
         Messaging.InboundEmailResult result = new Messaging.InboundEmailresult();
 		String body =email.plainTextBody;
-		String subToCompare = 'Calendar Invite:';
+		String subToCompare = 'Meeting Invite:';
 		if(email.subject.indexOf(subToCompare) != -1)
 		{
             boolean isAccepted;
