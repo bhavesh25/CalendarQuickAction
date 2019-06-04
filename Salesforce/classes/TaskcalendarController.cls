@@ -4,7 +4,8 @@ public class TaskcalendarController {
     //return all the events of logged in user.
     @AuraEnabled
     public static List<Task__c> getTasks(){
-        List<Task__c> result = new List<Task__c>([Select Id, Start_Time__c ,End_DateTime__c,Name, TItle__c, Status__c,Contact__c 
+        List<Task__c> result = new List<Task__c>([Select Id, Start_Time__c ,End_DateTime__c,Name, TItle__c, Status__c,Contact__c,
+                                                  Contact__r.LastName
                                                   from Task__c where Status__c != 'Cancelled'
                                                   	And User__c =:USerInfo.getUserId() ]);
         return result ; 

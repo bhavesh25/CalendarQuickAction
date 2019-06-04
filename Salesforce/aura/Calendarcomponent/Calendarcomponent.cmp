@@ -29,7 +29,6 @@
             </div>
     </div>
      <br></br>
-    
-    
+    <lightning:buttonIcon iconName="utility:refresh" variant="bare" onclick="{!c.scriptsLoaded }" alternativeText="Refresh Calendar" />
    
 </aura:component>
