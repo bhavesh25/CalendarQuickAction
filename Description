@@ -1,0 +1,35 @@
+Post Deployment steps:
+
+1.Create new Email service record with following data-
+  Email Service Name-	UpdateEventStatusFromEmail
+  Apex Class-	UpdateEventFromEmail
+  Accept Attachments-	None
+  Advanced Email Security Settings	 
+  Accept Email From	All email addresses (subject to security settings)
+  Convert Text Attachments to Binary Attachments	 
+  Active-	True
+
+2.Create new New Email Address in related list of email service as following
+  Email Service Name-	UpdateEventStatusFromEmail
+  Email Address Name-	UpdateEventStatusFromEmai
+  Email Address-	calendar@1yw7ybwzm737pq8sdk3g18luu9mhnsa35p5k6m8mgdovw5zhkz.2v-14vd4eae.ap15.apex.salesforce.com
+  (In email address field just type calendar, salesforce will update it once it is saved.)
+
+3.Once saved, copy this email address
+  Go to custom labels
+  Open Email_Service_Id label
+  And paste this email address copied into value field and click save
+
+
+4.Add ‘Open Calendar’ quick action on Contact’s ’Contact Layout’ layout
+
+
+Scenario:
+  Calendar will show all the events of logged in user.
+  Open calendar button will be displayed on contact record in lightning mode.
+  Sales rep can create, update or cancel the event from calendar.
+  Sales rep cannot overlap event with other existing pending or confirmed event.
+  Contact will receive email about event.
+  Contact can reply with yes or no to confirm the availability.
+  Colors displayed on calendar to show the status of events
+  Yellow means pending, red menas rejected, green means accepted
